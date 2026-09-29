@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Форма</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <form class="form">
+        <h1>Связаться с нами</h1>
+        <label class="field"
+          ><span>Имя</span
+          ><input
+            type="text"
+            name="name"
+            required
+            placeholder="Ваше имя" /></label
+        ><label class="field"
+          ><span>Email</span
+          ><input
+            type="email"
+            name="email"
+            required
+            placeholder="name@example.com" /></label
+        ><label class="field"
+          ><span>Сообщение</span
+          ><textarea
+            name="message"
+            required
+            placeholder="Напишите сообщение"
+          ></textarea></label
+        ><label class="check"
+          ><input type="checkbox" required /><span
+            >Я согласен на обработку данных</span
+          ></label
+        ><button type="submit">Отправить</button
+        ><button type="button" disabled>Недоступная кнопка</button>
+      </form>
+    </main>
+  </body>
+</html>
