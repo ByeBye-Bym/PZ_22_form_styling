@@ -1,6 +1,170 @@
-* , *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; font-family: Arial, sans-serif; color: #171717; background: #f5f4ef; }
-a { color: inherit; }
-button, input, textarea, select { font: inherit; }
-body{padding:48px}.page{max-width:640px;margin:0 auto}.form{display:grid;gap:20px;padding:32px;background:#fff;border:1px solid #aaa}.field{display:grid;gap:8px}input,textarea,button{width:100%;padding:14px;border:2px solid #171717;border-radius:0;background:#fff}textarea{min-height:150px;resize:vertical}button{background:#d8ff55;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}/* TODO hover, focus, focus-visible, user-invalid, valid, placeholder, checked */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  padding: 48px;
+  font-family: Arial, sans-serif;
+  color: #171717;
+  background: #f5f4ef;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #aaa;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #171717;
+  border-radius: 0;
+  background: #fff;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button {
+  background: #d8ff55;
+  cursor: pointer;
+}
+
+/* Hover */
+.field :is(input, textarea):hover {
+  border-color: #6c5ce7;
+}
+
+button:hover:not(:disabled) {
+  background: #6c5ce7;
+  color: #fff;
+}
+
+/* Focus и focus-visible */
+.field :is(input, textarea):focus {
+  border-color: #171717;
+}
+
+.field :is(input, textarea):focus-visible,
+button:focus-visible {
+  outline: 3px solid #6c5ce7;
+  outline-offset: 3px;
+}
+
+/* Подсказка в поле */
+::placeholder {
+  color: #6a6a6a;
+}
+
+/* Проверка значений */
+.field :is(input, textarea):valid {
+  border-color: #3a9b59;
+}
+
+.field :is(input, textarea):user-invalid {
+  border-color: #d13b3b;
+  background: #fff1f1;
+}
+
+/* Disabled */
+button:disabled {
+  border-color: #999;
+  background: #e5e5e5;
+  color: #555;
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Checkbox */
+.check {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.check input {
+  width: auto;
+}
+
+.check input:checked + span {
+  padding: 2px 8px;
+  background: #6c5ce7;
+  color: #fff;
+}
+
+/* Radio-группа с собственным состоянием, input остаётся в DOM */
+.choices {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choices legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.choice {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.choice input {
+  width: auto;
+}
+
+.choice span {
+  padding: 6px 12px;
+  border: 2px solid #171717;
+}
+
+.choice input:checked + span {
+  border-color: #6c5ce7;
+  background: #6c5ce7;
+  color: #fff;
+}
+
+.choice input:focus-visible + span {
+  outline: 3px solid #6c5ce7;
+  outline-offset: 3px;
+}
